@@ -7,7 +7,7 @@ import Site from './Site';
 const adapter = new Adapter();
 
 configure({ adapter });
-describe('<Hello />', () => {
+describe('<Site />', () => {
   test('it should shallow render', () => {
     const wrapper = shallow(<Site />);
     expect(wrapper.find('Cart').exists()).toBeTruthy();

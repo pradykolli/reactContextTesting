@@ -1,24 +1,18 @@
 import React, { useContext } from 'react';
+import { IInitialState, IContextValue } from './SiteTypes';
 export const useSiteContext = () => useContext(SiteContext);
-export interface IcontextValue {
-    Cart: string[],
-    Electronics: string[],
-    Apparel: string[],
-    Groceries: string[],
-    addToCart: (item:string) => void,
-    deleteFromCart: (item:string) => void,
+
+export const initialState:IInitialState = {
+    Cart: [],
+    Electronics: ["Apple", "Samsung", "Bose"],
+    Apparel: ["Balenciaga", "LV", "Bvlgari"],
+    Groceries: ["Swiss cheese", "American Cheese", "Dragon Fruit", "Passion Fruit"]
 }
-const defaultValue:IcontextValue = {
-    Cart:[],
-    Electronics: [],
-    Apparel: [],
-    Groceries: [],
-    addToCart: (item:string) => {
-        alert(item);
-    },
-    deleteFromCart: (item:string) => {
-    }
+
+const contextValue: IContextValue = {
+    state: initialState,
+    dispatch: () => {}
 }
-const SiteContext = React.createContext<IcontextValue>(defaultValue);
+const SiteContext = React.createContext<IContextValue>(contextValue);
 
 export default SiteContext;

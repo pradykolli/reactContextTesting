@@ -3,17 +3,17 @@ import { shallow, configure } from 'enzyme';
 import * as SiteContext from '../SiteContext';
 import 'jest-enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { mockValue } from '../TestHelper';
+import { mockContextValue } from '../TestHelper';
 import Groceries from './Groceries';
 
 const adapter = new Adapter();
 
 configure({ adapter });
-describe('<Hello />', () => {
+describe('<Groceries />', () => {
   test('it should mock the context', () => {
     jest
       .spyOn(SiteContext, 'useSiteContext')
-      .mockImplementation(() => mockValue);
+      .mockImplementation(() => mockContextValue);
     const wrapper = shallow(<Groceries />);
     const p = wrapper.find('p');
 

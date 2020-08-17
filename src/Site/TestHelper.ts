@@ -1,10 +1,13 @@
-import { IcontextValue } from "./SiteContext";
+import { IInitialState, IContextValue } from "./SiteTypes";
 
-export const mockValue:IcontextValue = {
+export const mockStateValue:IInitialState = {
     Cart:[],
     Electronics: ["Apple","Samsung","Sony"],
     Apparel: ["UA", "Nike", "Adidas"],
-    Groceries: ["Avocado"],
-    addToCart: jest.fn(),
-    deleteFromCart: jest.fn()
+    Groceries: ["Avocado"]
+}
+
+export const mockContextValue:IContextValue = {
+    state: mockStateValue,
+    dispatch: jest.fn()
 }
